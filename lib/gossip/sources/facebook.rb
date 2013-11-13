@@ -1,5 +1,3 @@
-require 'cgi'
-
 module Gossip
   class Facebook
     include Source
@@ -23,10 +21,6 @@ module Gossip
     def query
       # TODO: I think this needs to be escaped before it gets used in the request
       %{SELECT total_count FROM link_stat WHERE url="#{escaped_url}"}
-    end
-
-    def escaped_url
-      CGI.escape url
     end
   end
 end

@@ -1,5 +1,3 @@
-require 'active_support/core_ext/hash' # for #deep_merge
-
 module Gossip
   module Source
     attr_accessor :url
@@ -25,6 +23,10 @@ module Gossip
 
   protected
 
+    def query_params
+      {}
+    end
+
     def request_options
       { method: request_method, headers: headers }
     end
@@ -35,6 +37,10 @@ module Gossip
 
     def headers
       { 'Accept' => 'text/json' }
+    end
+
+    def escaped_url
+      CGI.escape(url)
     end
   end
 end

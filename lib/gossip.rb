@@ -1,7 +1,10 @@
+require 'set'
+require 'cgi'
+
 require 'multi_json'
 require 'typhoeus'
-require 'set'
 require 'active_support/inflector' # for constantize & classify
+require 'active_support/core_ext/hash' # for #deep_merge
 
 require "gossip/runner"
 require "gossip/source"

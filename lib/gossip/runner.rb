@@ -41,7 +41,7 @@ module Gossip
 
     def constantize_sources(sources)
       sources.map do |source|
-        Gossip.const_get(source.to_s.classify)
+        Gossip.const_get(source.to_s.camelize)
       end
     end
   end
