@@ -41,9 +41,3 @@ module Gossip
   class UnexpectedResponse < StandardError; end
   class NotImplemented < StandardError; end
 end
-
-# Example API, until docs are present:
-# Gossip.shares_for('asdasd') #=> { source1: 123, source2: 321, ... }
-# Gossip.shares_from(:facebook, 'url') #=> 123
-# Gossip.shares_for('asdsad', sources: [:facebook, :twitter]) #=> { twitter: 123, facebook: 321 }
-# Gossip.default_sources = [:facebook, :twitter]
