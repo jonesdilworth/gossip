@@ -13,7 +13,8 @@ require "gossip/source"
 Gem.find_files("gossip/sources/*.rb").each { |path| require path }
 
 module Gossip
-  @@sources = Set.new
+  # Register all sources by default
+  @@sources = Set.new([:facebook, :twitter, :google_plus, :linkedin, :pinterest])
 
   def self.default_sources=(*sources)
     @@sources = Set.new(sources.flatten)
@@ -40,7 +41,6 @@ module Gossip
   class UnexpectedResponse < StandardError; end
   class NotImplemented < StandardError; end
 end
-
 
 # Example API, until docs are present:
 # Gossip.shares_for('asdasd') #=> { source1: 123, source2: 321, ... }
