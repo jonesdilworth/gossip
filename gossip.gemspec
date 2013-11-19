@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'typhoeus', '~> 0.6.3'
-  spec.add_dependency 'activesupport', '~> 3.2'
+  spec.add_dependency 'activesupport', '>= 3.0'
   spec.add_dependency 'multi_json', '~> 1.8.2'
   spec.add_dependency 'nokogiri'
 
